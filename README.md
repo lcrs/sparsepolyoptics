@@ -87,3 +87,5 @@ Description of the tools
      - adjust exposure with j/m
      - reload shaders with b
      - quit with q
+
+     An example of what this looks like: https://twitter.com/dearlensform/status/1475146696392949771
