@@ -3,7 +3,7 @@ Overview
 The provided code can be used to find sparse polynomials transferring rays
 through a lens system.
 
-It is part of our paper:  
+It is part of the paper:  
 Schrade, E., Hanika, J., & Dachsbacher, C. (2016). Sparse high-degree polynomials
 for wide-angle lenses. In Eurographics Symposium on Rendering.
 
@@ -17,6 +17,7 @@ With the source code you can:
   ray-traced rays to the output of the fitted polynomials,
 - generate code from the fitted polynomials to use it in your own renderer
   (includes aperture sampling for both path tracing and light tracing)
+- preview the view through a lens on the GPU
 
 Dependencies
 ------------------------
@@ -78,4 +79,11 @@ Description of the tools
     for aperture sampling.  
     _example: ./gencode lenses/fisheye-aspherical.fx_  
     For examples how to use the generated code see _render/lens.h_
-
+- __glRender__: preview the view through a lens on the GPU, using screenspace
+    raytracing into RGB-D cubemaps.
+    Controls:
+     - set aperture with f/v
+     - move lens with h/n
+     - adjust exposure with j/m
+     - reload shaders with b
+     - quit with q
