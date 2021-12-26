@@ -253,6 +253,9 @@ GLuint loadCompileComputeProgram(string csPath)
 
 void linkProgram(GLuint *program)
 {
+  printf("linking program %d... ", *program);
+  fflush(stdout);
+  
   GLuint prog = *program;
   glLinkProgram(prog);
 
@@ -269,6 +272,9 @@ void linkProgram(GLuint *program)
     if(success == GL_FALSE)
       exit(-1);
   }
+
+  printf("done\n");
+  fflush(stdout);
 }
 
 static void initPrograms()
