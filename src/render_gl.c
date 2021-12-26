@@ -20,7 +20,7 @@ using std::string;
 using std::stringstream;
 
 static GLuint vaoQuad, *program, cubemapColor, cubemapMinMaxDepth;
-static float dist = 0, exposure = 1;
+static float dist = 0, exposure = 1, apfac = 0;
 static int screenWidth = 960, screenHeight = 640;
 static int cubemapSize = 2048;
 
@@ -35,6 +35,8 @@ void updateUniforms()
   glUniform1f(distLoc, dist);
   GLint expLoc = glGetUniformLocation(program[0], "exposure");
   glUniform1f(expLoc, exposure);
+  GLint apfacLoc = glGetUniformLocation(program[0], "apfac");
+  glUniform1f(apfacLoc, apfac);
   glUseProgram(0);
 }
 
@@ -61,6 +63,10 @@ static void key_callback(GLFWwindow* window, int key, int scancode, int action, 
     exposure /= 2;
   if(key == GLFW_KEY_B && action & (GLFW_PRESS | GLFW_REPEAT))
     reloadShaders();
+  if(key == GLFW_KEY_F && action & (GLFW_PRESS | GLFW_REPEAT))
+    apfac += 0.01;
+  if(key == GLFW_KEY_V && action & (GLFW_PRESS | GLFW_REPEAT))
+    apfac -= 0.01;
 
   updateUniforms();
 }
