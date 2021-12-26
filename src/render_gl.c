@@ -20,7 +20,7 @@ using std::string;
 using std::stringstream;
 
 static GLuint vaoQuad, *program, cubemapColor, cubemapMinMaxDepth;
-static float dist = -150, exposure = 0.4, apfac = 0.03;
+static float dist = 0, exposure = 0.2, apfac = 0.1;
 static int screenWidth = 960, screenHeight = 640;
 static int cubemapSize = 2048;
 
