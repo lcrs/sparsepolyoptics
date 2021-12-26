@@ -266,7 +266,7 @@ void main()
   vec4 center = vec4(sensorPos, -sensorPos/(lens_length-lens_aperture_pos+dist));
   vec3 p, d;
   float t;
-  vec4 color;
+  vec4 color = vec4(0.0);
 
   for(int i = 0; i < 144; i++)
   {

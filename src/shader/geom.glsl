@@ -5,28 +5,28 @@ layout(triangle_strip, max_vertices = 4) out;
 
 layout(location = 0) in data
 {
-  vec2 sensorPos;
+  vec2 sensorPosVertex;
 }vert[4];
 
 out data
 {
-  vec2 sensorout;
+  vec2 sensorPos;
 };
 
 
 void main()
 {
   gl_Position = gl_in[0].gl_Position;
-  sensorout = vert[0].sensorPos;
+  sensorPos = vert[0].sensorPosVertex;
   EmitVertex();
   gl_Position = gl_in[1].gl_Position;
-  sensorout = vert[1].sensorPos;
+  sensorPos = vert[1].sensorPosVertex;
   EmitVertex();
   gl_Position = gl_in[2].gl_Position;
-  sensorout = vert[2].sensorPos;
+  sensorPos = vert[2].sensorPosVertex;
   EmitVertex();
   gl_Position = gl_in[3].gl_Position;
-  sensorout = vert[3].sensorPos;
+  sensorPos = vert[3].sensorPosVertex;
   EmitVertex();
 
   EndPrimitive();
